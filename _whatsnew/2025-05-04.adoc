@@ -1,0 +1,39 @@
+= Prise en charge de la réponse du tracker
+:allow-uri-read: 
+
+
+
+
+=== Prise en charge de la réponse du tracker
+
+Tracker fournit désormais des réponses API afin que vous puissiez voir la sortie de l'API REST liée à la tâche.
+
+
+
+=== Prise en charge de l'authentification par lien pour AWS Secrets Manager
+
+Vous avez désormais la possibilité d'utiliser les secrets d'AWS Secrets Manager pour authentifier les liens afin de ne pas avoir à utiliser les informations d'identification stockées dans BlueXP Workloads.
+
+link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html["Connectez-vous à un système de fichiers FSx pour ONTAP avec un lien Lambda"]
+
+
+
+=== Mettre en œuvre les meilleures pratiques pour un système de fichiers FSx for ONTAP
+
+BlueXP Workloads fournit un tableau de bord dans lequel vous pouvez consulter l'état bien architecturé de vos configurations de système de fichiers.  Vous pouvez tirer parti de cette analyse pour mettre en œuvre les meilleures pratiques pour vos systèmes de fichiers FSx for ONTAP .  L'analyse de la configuration du système de fichiers inclut les configurations suivantes : seuil de capacité SSD, snapshots locaux planifiés, sauvegardes FSx planifiées pour ONTAP , hiérarchisation des données et réplication des données à distance.
+
+* link:https://docs.netapp.com/us-en/workload-fsx-ontap/configuration-analysis.html["En savoir plus sur l'analyse bien architecturée des configurations de systèmes de fichiers"]
+* link:https://review.docs.netapp.com/us-en/workload-fsx-ontap_well-architected/improve-configurations.html["Mettez en œuvre les meilleures pratiques pour vos systèmes de fichiers"]
+
+
+
+
+=== Notification bien conçue pour les problèmes de système de fichiers
+
+Dans la console BlueXP , les systèmes de fichiers FSx for ONTAP avec des problèmes bien architecturés affichent désormais une notification dans le canevas indiquant quand les systèmes de fichiers ont des problèmes à résoudre.
+
+
+
+=== Terminologie des autorisations mise à jour
+
+L'interface utilisateur et la documentation de l'usine de charge de travail utilisent désormais « lecture seule » pour faire référence aux autorisations de lecture et « lecture/écriture » pour faire référence aux autorisations d'automatisation.

@@ -1,0 +1,245 @@
+---
+sidebar: sidebar 
+permalink: use/task-create-fsx-system.html 
+keywords: Amazon FSx for NetApp ONTAP, fsx, volumes, create system, delete system, access key, secret key, region, working environment, availability zones, discover, storage capacity, iops, throughput, security group, security, bluexp, NetApp Console 
+summary: Créez ou découvrez un système de fichiers FSx pour ONTAP pour ajouter et gérer des volumes et des services de données supplémentaires à partir de la console NetApp . 
+---
+= Créer ou découvrir un système de fichiers FSx pour ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Créez ou découvrez un système de fichiers FSx for ONTAP pour ajouter et gérer des volumes et des services de données supplémentaires à partir de la console NetApp .
+
+
+
+== Créer un système FSx pour ONTAP
+
+La première étape consiste à créer un système de fichiers FSx pour ONTAP .  Si vous avez déjà créé un système de fichiers FSx pour ONTAP dans la console de gestion AWS, vous pouvezlink:task-create-fsx-system.html#discover-an-existing-fsx-for-ontap-file-system["découvrez-le en utilisant la console NetApp"] .
+
+.À propos de cette tâche
+Une machine virtuelle de stockage est créée lorsque vous créez un système de fichiers.
+
+.Avant de commencer
+Avant de créer votre système de fichiers FSx pour ONTAP , vous aurez besoin de :
+
+* L'ARN d'un rôle IAM qui donne à Workload Factory les autorisations nécessaires pour créer un système de fichiers FSx pour ONTAP . link:../requirements/task-setting-up-permissions-fsx.html["Découvrez comment accorder des autorisations à un compte AWS"^] .
+* Les informations sur la région et le VPC où vous allez créer l'instance FSx for ONTAP .
+
+
+
+
+== Créer un système de fichiers FSx pour ONTAP
+
+Vous pouvez créer un système de fichiers FSx pour ONTAP à l'aide de _Création rapide_ ou _Création avancée_. Vous pouvez également utiliser les outils suivants disponibles dans Codebox : API REST, CloudFormation et Terraform. link:https://docs.netapp.com/us-en/workload-setup-admin/use-codebox.html#how-to-use-codebox["Apprenez à utiliser Codebox pour l'automatisation"^] .
+
+
+NOTE: Lorsque vous utilisez Terraform depuis Codebox, le code que vous copiez ou téléchargez est masqué `fsxadmin` et `vsadmin` mots de passe.  Vous devrez ressaisir les mots de passe lorsque vous exécuterez le code.
+
+[role="tabbed-block"]
+====
+.Création rapide
+--
+La création rapide vous permet d'utiliser une configuration de bonnes pratiques recommandée.  Vous pouvez modifier la plupart des paramètres après avoir créé un système de fichiers FSx pour ONTAP .
+
+.Étapes
+. Dans le menu de la console NetApp , sélectionnez *Stockage* puis *Gestion*.
+. Sélectionnez *Ajouter un système* sur la page Systèmes.
+. Sélectionnez *Amazon Web Services* comme emplacement, puis sélectionnez *Ajouter un nouveau* pour Amazon FSx for NetApp ONTAP.
+. Sur la page Créer un système de fichiers FSx pour ONTAP , sélectionnez *Création rapide*.
++
+Vous pouvez également charger une configuration enregistrée.
+
+. Sous Configuration générale du système de fichiers, fournissez les éléments suivants :
++
+.. *Informations d'identification AWS* : sélectionnez pour ajouter des informations d'identification AWS ou continuer sans informations d'identification.  Sans informations d'identification, vous pouvez copier et télécharger le code partiellement complet depuis Codebox. Le code peut être utilisé comme un modèle dans lequel vous pouvez compléter les informations manquantes (par exemple, les informations d'identification) ou personnaliser certaines données avant d'exécuter le code.
+.. *Nom du système de fichiers* : saisissez un nom pour le système de fichiers.
+.. *Topologie de déploiement* : sélectionnez une topologie de déploiement.
++
+*** La topologie évolutive est celle dans laquelle un système de fichiers est utilisé pour la distribution des données et peut augmenter en taille pour s'adapter à la croissance des données.
+*** La topologie évolutive est celle dans laquelle plusieurs systèmes de fichiers sont utilisés pour la distribution des données.
+
+
+.. *Paires HA* : saisissez le nombre de paires HA.
++
+*** Pour les déploiements à grande échelle, vous ne pouvez avoir qu'une seule paire HA.
+*** Pour les déploiements évolutifs, vous pouvez avoir entre deux et douze paires HA.
+
+
+.. *Type de déploiement* : sélectionnez un type de déploiement.
++
+*** Déploiement de zone de disponibilité unique (Single-AZ) : garantit la disponibilité en surveillant les pannes matérielles et en remplaçant automatiquement les composants de l'infrastructure en cas de panne.  Atteint une durabilité élevée en répliquant automatiquement vos données dans une zone de disponibilité pour les protéger contre les défaillances des composants.
+*** Déploiement de zones de disponibilité multiples (Multi-AZ) : fournit une disponibilité continue des données même lorsqu'une zone de disponibilité n'est pas disponible.  Les systèmes de fichiers Multi-AZ prennent en charge toutes les fonctionnalités de disponibilité et de durabilité des systèmes de fichiers Single-AZ.  Un système de fichiers Multi-AZ est conçu pour les charges de travail de production critiques pour l'entreprise qui nécessitent une haute disponibilité des données de fichiers ONTAP partagées et nécessitent un stockage avec réplication intégrée sur les zones de disponibilité.
+
+
+.. *Tags* : En option, vous pouvez ajouter jusqu'à 50 tags.
+
+
+. Sous *Réseau et sécurité*, dans le champ *Région et VPC*, sélectionnez la région et le VPC pour le système de fichiers.
+. Sous *Détails du système de fichiers*, indiquez les informations suivantes :
++
+.. *Capacité de stockage SSD* : saisissez la capacité de stockage et sélectionnez l'unité de capacité de stockage.
+.. * Informations d'identification ONTAP * : saisissez votre nom d'utilisateur et votre mot de passe ONTAP .
+.. *Configuration SMB/CIFS* : Facultatif.  Si vous prévoyez d'utiliser le protocole SMB/CIFS pour accéder aux volumes, vous devez configurer Active Directory pour la machine virtuelle de stockage lors de la création du système de fichiers.  Fournissez les détails suivants pour la machine virtuelle de stockage créée pour ce système de fichiers.
++
+... *Domaine Active Directory à rejoindre* : saisissez le nom de domaine complet (FQDN) d'Active Directory.
+... *Adresses IP DNS* : saisissez jusqu'à trois adresses IP DNS séparées par des virgules.
+... *Nom NetBIOS du serveur SMB* : saisissez le nom NetBIOS du serveur SMB de l'objet ordinateur Active Directory à créer pour votre machine virtuelle de stockage.  Il s’agit du nom de cette machine virtuelle de stockage dans Active Directory.
+... *Nom d'utilisateur* : saisissez le nom d'utilisateur du compte de service dans votre Active Directory existant.
++
+N'incluez pas de préfixe ou de suffixe de domaine.  Pour `EXAMPLE\ADMIN` , utiliser `ADMIN` .
+
+... *Mot de passe* : Saisissez le mot de passe du compte de service.
+... *Unité d'organisation* : saisissez éventuellement le nom de l'unité d'organisation dans laquelle vous souhaitez créer le compte d'ordinateur pour FSx for ONTAP.  L'UO est le nom de chemin distinctif de l'unité organisationnelle à laquelle vous souhaitez joindre le système de fichiers.
+... *Groupe d'administrateurs délégués* : saisissez éventuellement le nom du groupe dans votre Active Directory qui peut administrer votre système de fichiers.
++
+Si vous utilisez AWS Managed Microsoft AD, vous devez spécifier un groupe tel que AWS Delegated FSx Administrators, AWS Delegated Administrators ou un groupe personnalisé avec des autorisations déléguées à l'UO.
+
++
+Si vous rejoignez un AD autogéré, utilisez le nom du groupe dans votre AD.  Le groupe par défaut est `Domain Admins` .
+
+
+
+
+
+. Ouvrez le *Résumé* pour examiner la configuration que vous avez définie.  Si nécessaire, vous pouvez modifier n’importe quel paramètre à ce stade avant d’enregistrer ou de créer le système de fichiers.
+. Enregistrez ou créez le système de fichiers.
+
+
+.Résultat
+Si vous avez créé le système de fichiers, la nouvelle configuration FSx pour ONTAP apparaît sur la page Systèmes.
+
+Vous pouvez gérer vos systèmes de fichiers FSx for ONTAP de plusieurs manières, par exemple à partir des charges de travail dans la console NetApp , à l'aide d' ONTAP System Manager et à l'aide d'AWS CloudFormation. Découvrez comment link:task-manage-fsx-systems.html["gérer un système de fichiers FSx pour ONTAP"] .
+
+--
+.Création avancée
+--
+Avec la création avancée, vous définissez toutes les options de configuration, y compris la disponibilité, la sécurité, les sauvegardes et la maintenance.
+
+.Étapes
+. Dans le menu de la console NetApp , sélectionnez *Stockage* puis *Gestion*.
+. Sélectionnez *Ajouter un système* sur la page Systèmes.
+. Sélectionnez *Amazon Web Services* comme emplacement, puis sélectionnez *Ajouter un nouveau* pour Amazon FSx for NetApp ONTAP.
+. Sur la page Créer FSx pour ONTAP , sélectionnez *Création avancée*.
++
+Vous pouvez également charger une configuration enregistrée.
+
+. Sous Configuration générale du système de fichiers, fournissez les éléments suivants :
++
+.. *Informations d'identification AWS* : sélectionnez cette option pour ajouter des informations d'identification AWS dans Workload Factory ou continuez sans informations d'identification.
+.. *Nom du système de fichiers* : saisissez un nom pour le système de fichiers.
+.. *Topologie de déploiement* : sélectionnez une topologie de déploiement.
++
+*** La topologie évolutive est celle dans laquelle un système de fichiers est utilisé pour la distribution des données et peut augmenter en taille pour s'adapter à la croissance des données.
+*** La topologie évolutive est celle dans laquelle plusieurs systèmes de fichiers sont utilisés pour la distribution des données.
+
+
+.. *Paires HA* : saisissez le nombre de paires HA.
++
+*** Pour les déploiements à grande échelle, vous ne pouvez avoir qu'une seule paire HA.
+*** Pour les déploiements évolutifs, vous pouvez avoir entre deux et douze paires HA.
+
+
+.. *Type de déploiement* : sélectionnez un type de déploiement.
++
+*** Déploiement de zone de disponibilité unique (Single-AZ) : garantit la disponibilité en surveillant les pannes matérielles et en remplaçant automatiquement les composants de l'infrastructure en cas de panne.  Atteint une durabilité élevée en répliquant automatiquement vos données dans une zone de disponibilité pour les protéger contre les défaillances des composants.
+*** Déploiement de zones de disponibilité multiples (Multi-AZ) : fournit une disponibilité continue des données même lorsqu'une zone de disponibilité n'est pas disponible.  Les systèmes de fichiers Multi-AZ prennent en charge toutes les fonctionnalités de disponibilité et de durabilité des systèmes de fichiers Single-AZ.  Un système de fichiers Multi-AZ est conçu pour les charges de travail de production critiques pour l'entreprise qui nécessitent une haute disponibilité des données de fichiers ONTAP partagées et nécessitent un stockage avec réplication intégrée sur les zones de disponibilité.
+
+
+.. *Tags* : En option, vous pouvez ajouter jusqu'à 50 tags.
+
+
+. Sous Réseau et sécurité, indiquez les éléments suivants :
++
+.. *Région et VPC* : sélectionnez la région et le VPC pour le système de fichiers.
+.. *Groupe de sécurité* : Créez ou utilisez un groupe de sécurité existant.
+.. *Zones de disponibilité* : sélectionnez les zones de disponibilité et les sous-réseaux.
++
+*** Pour le nœud de configuration de cluster 1 : sélectionnez une zone de disponibilité et un sous-réseau.
+*** Pour le nœud de configuration de cluster 2 : sélectionnez une zone de disponibilité et un sous-réseau.
+
+
+.. *Tables de routage VPC* : sélectionnez la table de routage VPC pour permettre l’accès client aux volumes.
+.. *Plage d'adresses IP du point de terminaison* : sélectionnez *Plage d'adresses IP flottante en dehors de votre VPC* ou *Entrez une plage d'adresses IP* et entrez une plage d'adresses IP.
+.. *Cryptage* : sélectionnez le nom de la clé de cryptage dans la liste déroulante.
+
+
+. Sous Détails du système de fichiers, indiquez les éléments suivants :
++
+.. *Capacité de stockage SSD* : saisissez la capacité de stockage et sélectionnez l'unité de capacité de stockage.
+.. *IOPS provisionnés* : sélectionnez *Automatique* ou *Provisionné par l'utilisateur*.
+.. *Capacité de débit par paire HA* : sélectionnez la capacité de débit par paire HA.
+.. * Informations d'identification ONTAP * : saisissez votre nom d'utilisateur et votre mot de passe ONTAP .
+.. *Informations d'identification de la machine virtuelle de stockage* : saisissez votre nom d'utilisateur.  Le mot de passe peut être spécifique à ce système de fichiers ou, dans votre cas, utiliser le même mot de passe que celui saisi pour les informations d'identification ONTAP .
+.. *Configuration SMB/CIFS* : Facultatif.  Si vous prévoyez d'utiliser le protocole SMB/CIFS pour accéder aux volumes, vous devez configurer Active Directory pour la machine virtuelle de stockage lors de la création du système de fichiers.  Fournissez les détails suivants pour la machine virtuelle de stockage créée pour ce système de fichiers.
++
+... *Domaine Active Directory à rejoindre* : saisissez le nom de domaine complet (FQDN) d'Active Directory.
+... *Adresses IP DNS* : saisissez jusqu'à trois adresses IP DNS séparées par des virgules.
+... *Nom NetBIOS du serveur SMB* : saisissez le nom NetBIOS du serveur SMB de l'objet ordinateur Active Directory à créer pour votre machine virtuelle de stockage.  Il s’agit du nom de cette machine virtuelle de stockage dans Active Directory.
+... *Nom d'utilisateur* : saisissez le nom d'utilisateur du compte de service dans votre Active Directory existant.
++
+N'incluez pas de préfixe ou de suffixe de domaine.  Pour `EXAMPLE\ADMIN` , utiliser `ADMIN` .
+
+... *Mot de passe* : Saisissez le mot de passe du compte de service.
+... *Unité d'organisation* : saisissez éventuellement le nom de l'unité d'organisation dans laquelle vous souhaitez créer le compte d'ordinateur pour FSx for ONTAP.  L'UO est le nom de chemin distinctif de l'unité organisationnelle à laquelle vous souhaitez joindre le système de fichiers.
+... *Groupe d'administrateurs délégués* : saisissez éventuellement le nom du groupe dans votre Active Directory qui peut administrer votre système de fichiers.
++
+Si vous utilisez AWS Managed Microsoft AD, vous devez spécifier un groupe tel que AWS Delegated FSx Administrators, AWS Delegated Administrators ou un groupe personnalisé avec des autorisations déléguées à l'UO.
+
++
+Si vous rejoignez un AD autogéré, utilisez le nom du groupe dans votre AD.  Le groupe par défaut est `Domain Admins` .
+
+
+
+
+
+. Sous Sauvegarde et maintenance, fournissez les éléments suivants :
++
+.. *FSx pour Sauvegarde ONTAP * : les sauvegardes automatiques quotidiennes sont activées par défaut.  Désactiver si vous le souhaitez.
++
+... *Période de conservation des sauvegardes automatiques* : saisissez le nombre de jours pendant lesquels conserver les sauvegardes automatiques.
+... *Fenêtre de sauvegarde automatique quotidienne* : sélectionnez *Aucune préférence* (une heure de début de sauvegarde quotidienne est sélectionnée pour vous) ou *Sélectionnez l'heure de début pour les sauvegardes quotidiennes* et spécifiez une heure de début.
+... *Fenêtre de maintenance hebdomadaire* : sélectionnez *Aucune préférence* (une heure de début de fenêtre de maintenance hebdomadaire est sélectionnée pour vous) ou *Sélectionnez l'heure de début pour une fenêtre de maintenance hebdomadaire de 30 minutes* et spécifiez une heure de début.
+
+
+
+
+. Enregistrez ou créez le système de fichiers.
+
+
+.Résultat
+Si vous avez créé le système de fichiers, la nouvelle configuration FSx pour ONTAP apparaît sur la page Systèmes.
+
+Vous pouvez gérer vos systèmes de fichiers FSx for ONTAP de plusieurs manières, par exemple à partir des charges de travail dans la console NetApp , à l'aide d' ONTAP System Manager et à l'aide d'AWS CloudFormation. Découvrez comment link:task-manage-fsx-systems.html["gérer un système de fichiers FSx pour ONTAP"] .
+
+--
+====
+
+
+== Découvrir un système de fichiers FSx for ONTAP existant
+
+Si vous avez précédemment fourni vos informations d'identification AWS dans la console NetApp , vous pouvez découvrir automatiquement les systèmes de fichiers FSx for ONTAP à partir de la page Systèmes détectables.  Vous pouvez également consulter les services de données disponibles.
+
+.À propos de cette tâche
+Vous ne pouvez découvrir un système de fichiers FSx for ONTAP qu'une seule fois dans un compte et l'attacher à un espace de travail.  Le système de fichiers peut ensuite être supprimé et réassocié à un autre espace de travail.
+
+.Étapes
+. Dans le menu de la console NetApp , sélectionnez *Stockage*, puis *Gestion*, puis *Systèmes détectables*.
+. Le nombre de systèmes de fichiers FSx pour ONTAP découverts s'affiche. Sélectionnez *Découvrir*.
+. Sélectionnez un ou plusieurs systèmes de fichiers et sélectionnez *Découvrir* pour les ajouter à la page Systèmes.
+
+
+[NOTE]
+====
+* Si vous sélectionnez un cluster sans nom, vous recevrez une invite pour saisir un nom pour le cluster.
+* Si vous sélectionnez un cluster qui ne dispose pas des informations d'identification requises pour gérer le système de fichiers FSx for ONTAP à partir de la console, vous recevrez une invite pour sélectionner les informations d'identification avec les autorisations requises.
+
+
+====
+.Résultat
+La console affiche votre système de fichiers FSx for ONTAP découvert sur la page Systèmes.  Vous pouvez gérer vos systèmes de fichiers FSx for ONTAP de plusieurs manières, par exemple à partir des charges de travail dans la console NetApp , à l'aide d' ONTAP System Manager et à l'aide d'AWS CloudFormation. Découvrez comment link:task-manage-fsx-systems.html["gérer un système de fichiers FSx pour ONTAP"] .

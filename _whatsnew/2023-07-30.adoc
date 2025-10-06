@@ -1,0 +1,11 @@
+= Prise en charge de trois régions supplémentaires
+:allow-uri-read: 
+
+
+
+
+=== Prise en charge de trois régions supplémentaires
+
+Les clients peuvent désormais créer des systèmes de fichiers Amazon FSx for NetApp ONTAP dans trois nouvelles régions AWS : Europe (Zurich), Europe (Espagne) et Asie-Pacifique (Hyderabad).
+
+Se référer àlink:https://aws.amazon.com/about-aws/whats-new/2023/04/amazon-fsx-netapp-ontap-three-regions/#:~:text=Customers%20can%20now%20create%20Amazon,file%20systems%20in%20the%20cloud["Amazon FSx for NetApp ONTAP est désormais disponible dans trois régions supplémentaires"^] pour plus de détails.

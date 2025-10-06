@@ -1,0 +1,15 @@
+= Ajouter une machine virtuelle de stockage
+:allow-uri-read: 
+
+
+
+
+=== Ajouter une machine virtuelle de stockage
+
+Vous pouvez désormais ajouter une machine virtuelle de stockage au système de fichiers Amazon FSx for NetApp ONTAP à l’aide de BlueXP.
+
+
+
+=== L'onglet **Mes opportunités** est désormais **Mon domaine**
+
+L'onglet **Mes opportunités** est désormais **Mon domaine**.  La documentation est mise à jour pour refléter le nouveau nom.

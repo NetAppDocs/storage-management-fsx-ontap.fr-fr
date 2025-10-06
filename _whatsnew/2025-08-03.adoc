@@ -1,0 +1,16 @@
+= Améliorations apportées à l'onglet Relations de réplication
+:allow-uri-read: 
+
+
+
+
+=== Améliorations apportées à l'onglet Relations de réplication
+
+Nous avons ajouté plusieurs nouvelles colonnes au tableau des relations de réplication pour vous donner plus d'informations sur vos relations de réplication dans l'onglet *Relations de réplication*. Le tableau comprend désormais les colonnes suivantes :
+
+* Politique SnapMirror
+* Système de fichiers source
+* Système de fichiers cible
+* État de la relation
+* Heure du dernier transfert
+

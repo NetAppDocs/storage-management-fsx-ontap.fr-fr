@@ -1,0 +1,11 @@
+= Mise à jour des informations d'identification
+:allow-uri-read: 
+
+
+
+
+=== Mise à jour des informations d'identification
+
+Après avoir configuré les informations d'identification et les autorisations pour votre système de fichiers FSx for ONTAP , vous serez redirigé vers la page Informations d'identification BlueXP .  À partir de cette page, vous pouvez renommer ou supprimer vos informations d’identification FSx pour ONTAP .
+
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["Configurer les autorisations pour les systèmes de fichiers FSx pour ONTAP"]
