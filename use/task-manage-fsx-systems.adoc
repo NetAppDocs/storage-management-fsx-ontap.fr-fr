@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: use/task-manage-fsx-systems.html 
 keywords: amazon fsx for netapp ontap, fsx, manage fsx for ontap system, delete fsx for ontap system, remove fsx for ontap system, throughput capacity, change throughput, automatic capacity management, capacity management, storage capacity, replication, classification, sync, backup, recovery, bluexp, NetApp Console 
-summary: Après avoir créé ou découvert un système FSx for ONTAP dans la console NetApp , vous pouvez gérer le système de fichiers et utiliser les services de données NetApp qui fournissent des fonctionnalités telles que la sauvegarde et la récupération. 
+summary: Après avoir créé ou découvert un système FSx for ONTAP dans la NetApp Console, vous pouvez gérer le système de fichiers et utiliser les services de données NetApp qui fournissent des fonctionnalités telles que la sauvegarde et la récupération. 
 ---
-= Gérer un système de fichiers FSx pour ONTAP dans la console NetApp
+= Gérer un système de fichiers FSx pour ONTAP dans la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: Après avoir créé ou découvert un système FSx for ONTAP dans la con
 
 
 [role="lead"]
-Après avoir créé ou découvert un système FSx for ONTAP dans la console NetApp , vous pouvez gérer le système de fichiers en créant des volumes, en gérant les machines virtuelles de stockage, en protégeant les données et en administrant le système de fichiers.  La console vous permet également d'utiliser des services de données qui offrent des fonctionnalités telles que la sauvegarde et la récupération, la classification des données, la synchronisation des données, etc.
+Après avoir créé ou découvert un système FSx for ONTAP dans la NetApp Console, vous pouvez gérer le système de fichiers en créant des volumes, en gérant les machines virtuelles de stockage, en protégeant les données et en administrant le système de fichiers.  La console vous permet également d'utiliser des services de données qui offrent des fonctionnalités telles que la sauvegarde et la récupération, la classification des données, la synchronisation des données, etc.
 
 
 
 == Gérer un système de fichiers à l'aide de NetApp Workloads
 
-Lorsque vous ouvrez un système FSx pour ONTAP à partir de la page Systèmes de la console NetApp , vous êtes redirigé vers les charges de travail NetApp .  Workloads est un service d'optimisation et d'automatisation intelligent qui utilise les meilleures pratiques du secteur pour concevoir, configurer et exploiter des charges de travail clés à l'aide d' Amazon FSx for NetApp ONTAP.
+Lorsque vous ouvrez un système FSx pour ONTAP à partir de la page Systèmes de la NetApp Console , vous êtes redirigé vers les charges de travail NetApp .  Workloads est un service d'optimisation et d'automatisation intelligent qui utilise les meilleures pratiques du secteur pour concevoir, configurer et exploiter des charges de travail clés à l'aide d' Amazon FSx for NetApp ONTAP.
 
 https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["Découvrez comment gérer un système de fichiers à l'aide de NetApp Workloads"^]
 
@@ -66,7 +66,7 @@ link:https://docs.netapp.com/us-en/data-services-copy-sync/task-quick-start.html
 
 NetApp Data Classification vous permet d'analyser et de classer les données dans le multicloud hybride de votre organisation.
 
-link:https://docs.netapp.com/us-en/data-services-data-classification/index.html["Démarrer avec la classification des données NetApp"^]
+link:https://docs.netapp.com/us-en/data-services-data-classification/index.html["Démarrer avec la NetApp Data Classification"^]
 
 
 
@@ -76,7 +76,7 @@ Répliquer les données pour prendre en charge la sauvegarde et la reprise aprè
 
 link:https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html["Démarrer avec NetApp Replication"^]
 
-La réplication des données entre deux systèmes de fichiers FSx for ONTAP est possible à partir de la page Systèmes de la console NetApp .
+La réplication des données entre deux systèmes de fichiers FSx for ONTAP est possible à partir de la page Systèmes de la NetApp Console .
 
 .Avant de commencer
 Tenez compte des éléments suivants avant de commencer.
@@ -86,14 +86,14 @@ Tenez compte des éléments suivants avant de commencer.
 
 
 .Étapes
-. À partir de la page Systèmes de console NetApp , faites glisser le système de fichiers source FSx pour ONTAP sur le système de fichiers cible FSx pour ONTAP et sélectionnez *Réplication*.
+. À partir de la page Systèmes de NetApp Console , faites glisser le système de fichiers source FSx pour ONTAP sur le système de fichiers cible FSx pour ONTAP et sélectionnez *Réplication*.
 . Sur la page Créer une réplication, sélectionnez les volumes sources à répliquer, puis *Suivant*.
 . Sous Cible de réplication, fournissez les éléments suivants :
 +
 .. *Nom de la cible* : Le nom de la cible a été sélectionné précédemment lors de l'opération de glisser-déposer dans le canevas.
 .. *Nom de la machine virtuelle de stockage* : sélectionnez la machine virtuelle de stockage dans le menu déroulant.  La machine virtuelle de stockage que vous sélectionnez est la cible de tous les volumes sélectionnés dans cette relation de réplication.
 .. *Nom du volume* : Le nom du volume cible est généré automatiquement avec le format suivant `{OriginalVolumeName}_copy` .  Vous pouvez utiliser le nom de volume généré automatiquement ou saisir un autre nom de volume.
-.. *Cas d’utilisation* : sélectionnez l’un des cas d’utilisation suivants pour la réplication. En fonction du cas d'utilisation sélectionné, Workload Factory remplit le formulaire avec les valeurs recommandées conformément aux meilleures pratiques. Vous pouvez accepter les valeurs recommandées ou apporter des modifications au fur et à mesure que vous remplissez le formulaire.
+.. *Cas d’utilisation* : sélectionnez l’un des cas d’utilisation suivants pour la réplication.  En fonction du cas d'utilisation sélectionné, Workload Factory remplit le formulaire avec les valeurs recommandées conformément aux meilleures pratiques.  Vous pouvez accepter les valeurs recommandées ou apporter des modifications au fur et à mesure que vous remplissez le formulaire.
 +
 *** Migration : transfère vos données vers le système de fichiers cible FSx for ONTAP
 *** Reprise après sinistre à chaud : garantit une haute disponibilité et une reprise après sinistre rapide pour les charges de travail critiques
@@ -119,10 +119,10 @@ Pour tous les cas d’utilisation, si vous activez les instantanés pour la cons
 
 .. *Politique de hiérarchisation* : sélectionnez la politique de hiérarchisation pour les données stockées dans le volume cible.  La politique de hiérarchisation est définie par défaut sur la politique de hiérarchisation recommandée pour le cas d'utilisation que vous avez sélectionné.
 +
-_Balanced (Auto)_ est la stratégie de hiérarchisation par défaut lors de la création d'un volume à l'aide de la console Workload Factory. Pour plus d'informations sur les politiques de hiérarchisation des volumes, reportez-vous àlink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["Capacité de stockage du volume"^] dans la documentation AWS FSx pour NetApp ONTAP . Notez que Workload Factory utilise des noms basés sur des cas d'utilisation dans la console Workload Factory pour les stratégies de hiérarchisation et inclut les noms de stratégie de hiérarchisation FSx pour ONTAP entre parenthèses.
+_Balanced (Auto)_ est la stratégie de hiérarchisation par défaut lors de la création d'un volume à l'aide de la console Workload Factory.  Pour plus d'informations sur les politiques de hiérarchisation des volumes, reportez-vous àlink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["Capacité de stockage du volume"^] dans la documentation AWS FSx pour NetApp ONTAP .  Notez que Workload Factory utilise des noms basés sur des cas d'utilisation dans la console Workload Factory pour les stratégies de hiérarchisation et inclut les noms de stratégie de hiérarchisation FSx pour ONTAP entre parenthèses.
 
 +
-Si vous avez sélectionné le cas d’utilisation de migration, Workload Factory choisit automatiquement de copier la stratégie de hiérarchisation du volume source sur le volume cible. Vous pouvez désélectionner la copie de la politique de hiérarchisation et sélectionner une politique de hiérarchisation qui s'applique au volume sélectionné pour la réplication.
+Si vous avez sélectionné le cas d’utilisation de migration, Workload Factory choisit automatiquement de copier la stratégie de hiérarchisation du volume source sur le volume cible.  Vous pouvez désélectionner la copie de la politique de hiérarchisation et sélectionner une politique de hiérarchisation qui s'applique au volume sélectionné pour la réplication.
 
 .. *Taux de transfert maximal* : sélectionnez *Limité* et saisissez la limite de transfert maximale en Mo/s.  Vous pouvez également sélectionner *Illimité*.
 +
@@ -168,4 +168,4 @@ NOTE: La correspondance des étiquettes source et cible est nécessaire pour une
 
 NetApp Volume Caching fournit un volume persistant et inscriptible dans un emplacement distant.  Vous pouvez utiliser la mise en cache des volumes pour accélérer l’accès aux données ou pour décharger le trafic des volumes fortement sollicités.
 
-link:https://docs.netapp.com/us-en/console-volume-caching/get-started/cache-intro.html["Démarrer avec la mise en cache des volumes NetApp"^]
+link:https://docs.netapp.com/us-en/console-volume-caching/get-started/cache-intro.html["Démarrer avec la NetApp Volume Caching"^]

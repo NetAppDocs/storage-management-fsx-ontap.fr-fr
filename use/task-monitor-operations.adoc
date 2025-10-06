@@ -2,23 +2,23 @@
 sidebar: sidebar 
 permalink: use/task-monitor-operations.html 
 keywords: monitor jobs, track jobs, monitor, track, NetApp Console, bluexp 
-summary: Suivez les opérations FSx for ONTAP et surveillez la progression des opérations avec Tracker dans la console NetApp . 
+summary: Suivez les opérations FSx for ONTAP et surveillez la progression des opérations avec Tracker dans la NetApp Console. 
 ---
-= Surveillez les opérations FSx pour ONTAP avec Tracker dans la console NetApp
+= Surveillez les opérations FSx pour ONTAP avec Tracker dans la NetApp Console
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Surveillez et suivez l'exécution des opérations FSx for ONTAP et surveillez la progression des tâches avec Tracker dans la console NetApp .
+Surveillez et suivez l'exécution des opérations FSx for ONTAP et surveillez la progression des tâches avec Tracker dans la NetApp Console.
 
 .À propos de cette tâche
 NetApp Console fournit Tracker, une fonctionnalité de surveillance des tâches, afin que vous puissiez surveiller et suivre la progression et l'état des informations d'identification, FSx pour ONTAP et les opérations de liaison, examiner les détails des tâches et sous-tâches d'opération et diagnostiquer les problèmes ou les échecs.
 
 Plusieurs actions sont disponibles dans Tracker.  Vous pouvez filtrer les tâches par période (dernières 24 heures, 7 jours, 14 jours ou 30 jours), charge de travail, statut et utilisateur ; rechercher des tâches à l'aide de la fonction de recherche ; et télécharger le tableau des tâches sous forme de fichier CSV.  Vous pouvez actualiser le Tracker à tout moment.  Et vous pouvez rapidement réessayer une opération ayant échoué ou modifier les paramètres d'une opération ayant échoué et réessayer l'opération.
 
-Tracker prend en charge deux niveaux de surveillance en fonction de l'opération.  Chaque tâche, telle que le déploiement du système de fichiers, affiche la description de la tâche, l'état, l'heure de début, la durée de la tâche, l'utilisateur, la région, la ressource proxy, l'ID de la tâche et toutes les sous-tâches associées.  Vous pouvez afficher les réponses de l’API pour comprendre ce qui s’est passé pendant l’opération.
+Tracker prend en charge deux niveaux de surveillance en fonction de l'opération.  Chaque tâche, comme le déploiement du système de fichiers, affiche la description de la tâche, l'état, l'heure de début, la durée de la tâche, l'utilisateur, la région, la ressource proxy, l'ID de la tâche et toutes les sous-tâches associées.  Vous pouvez afficher les réponses de l’API pour comprendre ce qui s’est passé pendant l’opération.
 
 Suivi des niveaux de tâches avec exemples::
 +
@@ -37,10 +37,10 @@ Conservation des événements:: Les événements sont conservés dans l'interfac
 
 == Suivre et surveiller les opérations
 
-Suivez et surveillez les opérations dans la console NetApp avec Tracker.
+Suivez et surveillez les opérations dans la NetApp Console avec Tracker.
 
 .Étapes
-. Dans le menu de la console NetApp , sélectionnez *Charges de travail*, puis *Administration*.
+. Dans le menu de la NetApp Console , sélectionnez *Charges de travail*, puis *Administration*.
 . Dans le menu Administration, sélectionnez *Tracker*.
 . Dans Tracker, affichez les tâches ou utilisez les filtres ou recherchez pour affiner les résultats.  Vous pouvez également télécharger un rapport de toutes les opérations en sélectionnant *Exporter CSV*.
 

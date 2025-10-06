@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/task-remove-filesystem.html 
 keywords: amazon fsx for netapp ontap, fsx for ontap, fsx, remove fsx for ontap file system, remove file system, file system, disassociate file system, bluexp, NetApp Console 
-summary: Supprimez un système de fichiers FSx pour ONTAP d’un projet dans la console NetApp . 
+summary: 'Supprimez un système de fichiers FSx pour ONTAP d"un projet dans la NetApp Console.' 
 ---
 = Supprimer un système de fichiers FSx pour ONTAP d'un projet
 :hardbreaks:
@@ -14,13 +14,13 @@ summary: Supprimez un système de fichiers FSx pour ONTAP d’un projet dans la 
 
 
 [role="lead"]
-Supprimez un système de fichiers FSx pour ONTAP d’un projet dans la console NetApp .  Cette opération dissocie le système de fichiers d’un projet afin que vous puissiez l’associer à un autre projet au sein du même compte.
+Supprimez un système de fichiers FSx pour ONTAP d'un projet dans la NetApp Console.  Cette opération dissocie le système de fichiers d’un projet afin que vous puissiez l’associer à un autre projet au sein du même compte.
 
 .À propos de cette tâche
-La suppression d’un système de fichiers FSx for ONTAP d’un projet le supprime de la console NetApp .  Il ne supprime pas le système de fichiers FSx pour ONTAP .  Vous pouvez ultérieurement redécouvrir le système de fichiers FSx for ONTAP dans le même projet ou dans un projet différent à partir du même compte.
+La suppression d'un système de fichiers FSx for ONTAP d'un projet le supprime de la NetApp Console.  Il ne supprime pas le système de fichiers FSx pour ONTAP .  Vous pouvez ultérieurement redécouvrir le système de fichiers FSx for ONTAP dans le même projet ou dans un projet différent à partir du même compte.
 
 .Étapes
-. Dans le menu de la console NetApp , sélectionnez *Stockage* puis *Gestion*.
+. Dans le menu de la NetApp Console , sélectionnez *Stockage* puis *Gestion*.
 . Sélectionnez le système de fichiers que vous souhaitez supprimer.
 . Sélectionnez *Entrer dans le système*.
 . Depuis FSx for ONTAP dans Stockage, sélectionnez le menu à trois points, puis sélectionnez *Supprimer du projet*.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: requirements/task-setting-up-permissions-fsx.html 
 keywords: fsx for ontap, iam, user role, permissions, credentials, bluexp 
-summary: 'Pour créer ou gérer un environnement de travail FSx for ONTAP , vous devez ajouter des informations d"identification AWS dans la console NetApp en fournissant l"ARN d"un rôle IAM qui donne les autorisations nécessaires pour créer un système FSx for ONTAP à partir de la console NetApp .' 
+summary: 'Pour créer ou gérer un environnement de travail FSx for ONTAP , vous devez ajouter des informations d"identification AWS dans la NetApp Console en fournissant l"ARN d"un rôle IAM qui donne les autorisations nécessaires pour créer un système FSx for ONTAP à partir de la NetApp Console.' 
 ---
 = Configurer les autorisations pour FSx pour ONTAP
 :hardbreaks:
@@ -14,15 +14,15 @@ summary: 'Pour créer ou gérer un environnement de travail FSx for ONTAP , vous
 
 
 [role="lead"]
-Pour créer ou gérer un environnement de travail FSx for ONTAP , vous devez ajouter des informations d'identification AWS dans la console NetApp en fournissant l'ARN d'un rôle IAM qui donne les autorisations nécessaires pour créer un système FSx for ONTAP à partir de la console NetApp .
+Pour créer ou gérer un environnement de travail FSx for ONTAP , vous devez ajouter des informations d'identification AWS dans la NetApp Console en fournissant l'ARN d'un rôle IAM qui donne les autorisations nécessaires pour créer un système FSx for ONTAP à partir de la NetApp Console.
 
 
 
 == Pourquoi les informations d'identification AWS sont requises
 
-Les informations d’identification AWS sont requises pour créer et gérer les systèmes FSx for ONTAP à partir de la console NetApp .  Vous pouvez créer de nouvelles informations d’identification AWS ou ajouter des informations d’identification AWS à une organisation existante.  Les informations d'identification fournissent les autorisations nécessaires pour gérer les ressources et les processus au sein de votre environnement cloud AWS à partir de la console NetApp .
+Les informations d’identification AWS sont requises pour créer et gérer les systèmes FSx for ONTAP à partir de la NetApp Console.  Vous pouvez créer de nouvelles informations d’identification AWS ou ajouter des informations d’identification AWS à une organisation existante.  Les informations d'identification fournissent les autorisations nécessaires pour gérer les ressources et les processus au sein de votre environnement cloud AWS à partir de la NetApp Console.
 
-Les informations d’identification et les autorisations sont gérées via NetApp Workload Factory.  Workload Factory est une plateforme de gestion du cycle de vie conçue pour aider les utilisateurs à optimiser les charges de travail à l'aide d' Amazon FSx for NetApp ONTAP .  La console NetApp utilise le même ensemble d’informations d’identification et d’autorisations AWS que Workload Factory.
+Les informations d'identification et les autorisations sont gérées via NetApp Workload Factory.  Workload Factory est une plateforme de gestion du cycle de vie conçue pour aider les utilisateurs à optimiser les charges de travail à l'aide d' Amazon FSx for NetApp ONTAP .  La NetApp Console utilise le même ensemble d’informations d’identification et d’autorisations AWS que Workload Factory.
 
 L'interface Workload Factory fournit aux utilisateurs de FSx for ONTAP des options permettant d'activer des fonctionnalités de charge de travail telles que le stockage, VMware, les bases de données et GenAI, et de sélectionner des autorisations pour les charges de travail.  _Storage_ est la capacité de gestion du stockage dans Workload Factory et c'est la seule capacité dont vous avez besoin pour activer et ajouter des informations d'identification pour créer et gérer vos systèmes de fichiers FSx for ONTAP .
 
@@ -34,7 +34,7 @@ Lorsque vous ajoutez de nouvelles informations d'identification pour FSx for ONT
 
 Les informations d'identification AWS nouvelles et existantes sont visibles à partir du menu Administration sur la page *Informations d'identification*.
 
-image:screenshot-netapp-console-administration-credentials.png["Capture d’écran du menu Administration et de l’option Informations d’identification mises en évidence dans le menu d’administration de la console NetApp ."]
+image:screenshot-netapp-console-administration-credentials.png["Capture d’écran du menu Administration et de l’option Informations d’identification mises en évidence dans le menu d’administration de la NetApp Console ."]
 
 Vous pouvez ajouter des informations d’identification en utilisant deux méthodes :
 
@@ -46,22 +46,22 @@ Vous pouvez ajouter des informations d’identification en utilisant deux métho
 
 == Ajouter manuellement des informations d'identification à un compte
 
-Vous pouvez ajouter manuellement les informations d'identification AWS à la console NetApp pour accorder à votre compte les autorisations nécessaires pour gérer les ressources AWS que vous utiliserez pour exécuter vos charges de travail uniques. Chaque ensemble d’informations d’identification que vous ajoutez comprendra une ou plusieurs stratégies IAM basées sur les capacités de charge de travail que vous souhaitez utiliser et un rôle IAM attribué à votre compte.
+Vous pouvez ajouter manuellement les informations d'identification AWS à la NetApp Console pour accorder à votre compte les autorisations nécessaires pour gérer les ressources AWS que vous utiliserez pour exécuter vos charges de travail uniques.  Chaque ensemble d’informations d’identification que vous ajoutez comprendra une ou plusieurs stratégies IAM basées sur les capacités de charge de travail que vous souhaitez utiliser et un rôle IAM attribué à votre compte.
 
 La création des informations d’identification se déroule en trois étapes :
 
 * Sélectionnez les services et le niveau d’autorisations que vous souhaitez utiliser, puis créez des politiques IAM à partir de la console de gestion AWS.
 * Créez un rôle IAM à partir de la console de gestion AWS.
-* Dans Charges de travail dans la console NetApp , entrez un nom et ajoutez les informations d’identification.
+* Dans Charges de travail dans la NetApp Console, entrez un nom et ajoutez les informations d’identification.
 
 
-Pour créer ou gérer un environnement de travail FSx pour ONTAP , vous devez ajouter des informations d'identification AWS aux charges de travail dans la console NetApp en fournissant l'ARN d'un rôle IAM qui donne aux charges de travail les autorisations nécessaires pour créer un environnement de travail FSx pour ONTAP .
+Pour créer ou gérer un environnement de travail FSx pour ONTAP , vous devez ajouter des informations d'identification AWS aux charges de travail dans la NetApp Console en fournissant l'ARN d'un rôle IAM qui donne aux charges de travail les autorisations nécessaires pour créer un environnement de travail FSx pour ONTAP .
 
 .Avant de commencer
 Vous aurez besoin d'informations d'identification pour vous connecter à votre compte AWS.
 
 .Étapes
-. Dans le menu de la console NetApp , sélectionnez *Administration* puis *Informations d'identification*.
+. Dans le menu de la NetApp Console , sélectionnez *Administration* puis *Informations d'identification*.
 . Depuis la page *Informations d’identification de l’organisation*, sélectionnez *Ajouter des informations d’identification*.
 . Sélectionnez *Amazon Web Services*, puis *FSx pour ONTAP*, puis *Suivant*.
 +
@@ -190,7 +190,7 @@ Dans cette section, vous allez configurer un rôle IAM que Workload Factory assu
 
 .Étapes
 . Dans la console de gestion AWS, sélectionnez *Rôles > Créer un rôle*.
-. Sous *Type d’entité de confiance*, sélectionnez *Compte AWS*.
+. Sous *Type d’entité approuvée*, sélectionnez *Compte AWS*.
 +
 .. Sélectionnez *Un autre compte AWS* et copiez et collez l'ID de compte pour la gestion de la charge de travail FSx pour ONTAP à partir de l'interface utilisateur Charges de travail.
 .. Sélectionnez *ID externe requis* et copiez et collez l’ID externe à partir de l’interface utilisateur des charges de travail.
@@ -216,13 +216,13 @@ La dernière étape consiste à saisir un nom pour les informations d’identifi
 
 
 .Résultat
-Les informations d’identification sont créées et visibles sur la page Informations d’identification.  Vous pouvez désormais utiliser les informations d’identification lors de la création d’un environnement de travail FSx pour ONTAP .  Chaque fois que nécessaire, vous pouvez renommer les informations d'identification ou les supprimer de la console NetApp .
+Les informations d’identification sont créées et visibles sur la page Informations d’identification.  Vous pouvez désormais utiliser les informations d’identification lors de la création d’un environnement de travail FSx pour ONTAP .  Chaque fois que nécessaire, vous pouvez renommer les informations d'identification ou les supprimer de la NetApp Console.
 
 
 
 == Ajouter des informations d'identification à un compte à l'aide de CloudFormation
 
-Vous pouvez ajouter des informations d'identification AWS aux charges de travail à l'aide d'une pile AWS CloudFormation en sélectionnant les fonctionnalités de charge de travail que vous souhaitez utiliser, puis en lançant la pile AWS CloudFormation dans votre compte AWS. CloudFormation créera les politiques IAM et le rôle IAM en fonction des capacités de charge de travail que vous avez sélectionnées.
+Vous pouvez ajouter des informations d'identification AWS aux charges de travail à l'aide d'une pile AWS CloudFormation en sélectionnant les fonctionnalités de charge de travail que vous souhaitez utiliser, puis en lançant la pile AWS CloudFormation dans votre compte AWS.  CloudFormation créera les politiques IAM et le rôle IAM en fonction des capacités de charge de travail que vous avez sélectionnées.
 
 .Avant de commencer
 * Vous aurez besoin d'informations d'identification pour vous connecter à votre compte AWS.
@@ -262,7 +262,7 @@ Vous pouvez ajouter des informations d'identification AWS aux charges de travail
 
 
 .Étapes
-. Dans le menu de la console NetApp , sélectionnez *Administration* puis *Informations d'identification*.
+. Dans le menu de la NetApp Console , sélectionnez *Administration* puis *Informations d'identification*.
 . Sélectionnez *Ajouter des informations d'identification*.
 . Sélectionnez *Amazon Web Services*, puis *FSx pour ONTAP*, puis *Suivant*.
 +
@@ -291,4 +291,4 @@ Vous devez vous connecter au compte AWS sur lequel réside le système de fichie
 
 
 .Résultat
-Les informations d’identification sont créées et visibles sur la page Informations d’identification.  Vous pouvez désormais utiliser les informations d’identification lors de la création d’un environnement de travail FSx pour ONTAP .  Chaque fois que nécessaire, vous pouvez renommer les informations d'identification ou les supprimer de la console NetApp .
+Les informations d’identification sont créées et visibles sur la page Informations d’identification.  Vous pouvez désormais utiliser les informations d’identification lors de la création d’un environnement de travail FSx pour ONTAP .  Chaque fois que nécessaire, vous pouvez renommer les informations d'identification ou les supprimer de la NetApp Console.
