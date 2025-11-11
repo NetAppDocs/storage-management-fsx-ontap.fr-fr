@@ -1,0 +1,11 @@
+= Prise en charge de la réplication entre les systèmes ONTAP sur site et les systèmes de fichiers FSx pour ONTAP
+:allow-uri-read: 
+
+
+
+
+=== Prise en charge de la réplication entre les systèmes ONTAP sur site et les systèmes de fichiers FSx pour ONTAP
+
+La réplication des données est disponible entre un système ONTAP sur site et un système de fichiers FSx for ONTAP depuis FSx for ONTAP dans la NetApp Console.
+
+link:https://docs.netapp.com/us-en/storage-management-fsx-ontap/use/task-manage-fsx-systems.html#replicate-data["Répliquer les données"]

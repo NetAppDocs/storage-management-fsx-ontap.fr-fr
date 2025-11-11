@@ -14,7 +14,7 @@ summary: 'Pour créer ou gérer un environnement de travail FSx for ONTAP , vous
 
 
 [role="lead"]
-Pour créer ou gérer un environnement de travail FSx for ONTAP , vous devez ajouter des informations d'identification AWS dans la NetApp Console en fournissant l'ARN d'un rôle IAM qui donne les autorisations nécessaires pour créer un système FSx for ONTAP à partir de la NetApp Console.
+Pour créer ou gérer un système de fichiers FSx pour ONTAP , vous devez ajouter des informations d'identification AWS dans la NetApp Console en fournissant l'ARN d'un rôle IAM qui accorde les autorisations nécessaires pour créer un système FSx pour ONTAP à partir de la NetApp Console.
 
 
 
@@ -30,7 +30,7 @@ L'interface Workload Factory fournit aux utilisateurs de FSx for ONTAP des optio
 
 == À propos de cette tâche
 
-Lorsque vous ajoutez de nouvelles informations d'identification pour FSx for ONTAP à partir du stockage dans Workload Factory, vous devez décider du niveau d'autorisations, ou _mode opérationnel_, dans lequel vous souhaitez fonctionner. Pour découvrir et déployer des ressources AWS telles que les systèmes de fichiers FSx for ONTAP , vous aurez besoin d'autorisations _lecture seule_ ou _lecture/écriture_.  FSx pour ONTAP fonctionnera en mode _de base_ sauf si vous sélectionnez le mode _lecture seule_ ou le mode _lecture/écriture_.  Les autorisations de lecture seule sont identiques aux autorisations d'affichage.  _Lecture/Écriture_ sont les mêmes que les autorisations d'exploitation. link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["En savoir plus sur les modes de fonctionnement"] .
+Lors de l'ajout de nouvelles informations d'identification pour FSx for ONTAP à partir du stockage dans Workload Factory, vous devrez choisir les stratégies d'autorisation que vous souhaitez accorder.  Pour découvrir les ressources AWS telles que les systèmes de fichiers FSx pour ONTAP , vous aurez besoin des autorisations _view, planning et analysis_.  Pour déployer FSx pour les systèmes de fichiers ONTAP , vous aurez besoin des autorisations de _création et de suppression de systèmes de fichiers_.  Vous pouvez effectuer des opérations de base pour FSx for ONTAP sans autorisation. link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["En savoir plus sur les autorisations"].
 
 Les informations d'identification AWS nouvelles et existantes sont visibles à partir du menu Administration sur la page *Informations d'identification*.
 
@@ -81,100 +81,9 @@ Dans cette section, vous choisirez la capacité de stockage à gérer dans le ca
 +
 Vous pouvez ajouter des fonctionnalités supplémentaires ultérieurement, sélectionnez donc simplement les charges de travail que vous souhaitez actuellement déployer et gérer.
 
-. Pour les fonctionnalités de charge de travail qui offrent un choix de niveaux d’autorisation (lecture seule ou lecture/écriture), sélectionnez le type d’autorisations qui seront disponibles avec ces informations d’identification. link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["En savoir plus sur les autorisations, également appelées modes opérationnels"^] .
+. Pour les fonctionnalités de charge de travail offrant un choix de politiques d'autorisation, sélectionnez le type d'autorisations qui seront disponibles avec ces informations d'identification. link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["Découvrez les autorisations"^].
 . Facultatif : sélectionnez *Activer la vérification automatique des autorisations* pour vérifier si vous disposez des autorisations de compte AWS requises pour effectuer les opérations de charge de travail.  L'activation de la vérification ajoute le `iam:SimulatePrincipalPolicy permission` à vos politiques d’autorisation.  Le but de cette autorisation est de confirmer uniquement les autorisations.  Vous pouvez supprimer l'autorisation après avoir ajouté des informations d'identification, mais nous vous recommandons de la conserver pour empêcher la création de ressources pour des opérations partiellement réussies et pour vous éviter tout nettoyage manuel des ressources requis.
 . Dans la fenêtre Codebox, copiez les autorisations pour la première stratégie IAM.
-+
-Les autorisations de stockage peuvent également être copiées à partir des onglets suivants.
-
-+
-[role="tabbed-block"]
-====
-.Autorisations en lecture seule
---
-[source, json]
-----
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "fsx:Describe*",
-        "fsx:ListTagsForResource",
-        "ec2:Describe*",
-        "kms:Describe*",
-        "elasticfilesystem:Describe*",
-        "kms:List*",
-        "cloudwatch:GetMetricData",
-        "cloudwatch:GetMetricStatistics"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "iam:SimulatePrincipalPolicy"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
-----
---
-.Autorisations de lecture/écriture
---
-[source, json]
-----
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "fsx:*",
-        "ec2:Describe*",
-        "ec2:CreateTags",
-        "ec2:CreateSecurityGroup",
-        "iam:CreateServiceLinkedRole",
-        "kms:Describe*",
-        "elasticfilesystem:Describe*",
-        "kms:List*",
-        "kms:CreateGrant",
-        "cloudwatch:PutMetricData",
-        "cloudwatch:GetMetricData",
-        "cloudwatch:GetMetricStatistics"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "ec2:AuthorizeSecurityGroupEgress",
-        "ec2:AuthorizeSecurityGroupIngress",
-        "ec2:RevokeSecurityGroupEgress",
-        "ec2:RevokeSecurityGroupIngress",
-        "ec2:DeleteSecurityGroup"
-      ],
-      "Resource": "*",
-      "Condition": {
-        "StringLike": {
-          "ec2:ResourceTag/AppCreator": "NetappFSxWF"
-        }
-      }
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "iam:SimulatePrincipalPolicy"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
-----
---
-====
 . Ouvrez une autre fenêtre de navigateur et connectez-vous à votre compte AWS dans la console de gestion AWS.
 . Ouvrez le service IAM, puis sélectionnez *Stratégies* > *Créer une stratégie*.
 . Sélectionnez JSON comme type de fichier, collez les autorisations que vous avez copiées à l’étape 3 et sélectionnez *Suivant*.

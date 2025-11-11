@@ -72,21 +72,21 @@ link:https://docs.netapp.com/us-en/data-services-data-classification/index.html[
 
 === Répliquer les données
 
-Répliquer les données pour prendre en charge la sauvegarde et la reprise après sinistre.  La réplication des données entre un système de fichiers FSx for ONTAP et Cloud Volumes ONTAP, ou entre un système de fichiers FSx for ONTAP et un système ONTAP local, peut être réalisée à l'aide de NetApp Replication.  La réplication vous permet de répliquer des données entre des systèmes de stockage ONTAP pour prendre en charge la sauvegarde et la reprise après sinistre vers le cloud ou entre des clouds.
+Répliquer les données pour prendre en charge la sauvegarde et la reprise après sinistre. La réplication des données entre un système de fichiers FSx for ONTAP et Cloud Volumes ONTAP peut être réalisée à l'aide de NetApp Replication. La réplication vous permet de répliquer des données entre des systèmes de stockage ONTAP pour prendre en charge la sauvegarde et la reprise après sinistre vers le cloud ou entre des clouds.
 
 link:https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html["Démarrer avec NetApp Replication"^]
 
-La réplication des données entre deux systèmes de fichiers FSx for ONTAP est possible à partir de la page Systèmes de la NetApp Console .
+La réplication des données entre deux systèmes de fichiers FSx for ONTAP et entre un système ONTAP sur site et un système de fichiers FSx for ONTAP est possible depuis la page des systèmes de la NetApp Console .
 
 .Avant de commencer
 Tenez compte des éléments suivants avant de commencer.
 
-* Pour répliquer des données entre deux systèmes de fichiers FSx for ONTAP , vous devez sélectionner un connecteur avec connectivité au système de fichiers ou entrer le système de fichiers pour associer un lien.
+* Pour répliquer des données entre deux systèmes de fichiers FSx for ONTAP ou entre un système ONTAP sur site et un système de fichiers FSx for ONTAP , vous devez sélectionner un agent de console connecté au système de fichiers ou saisir le système de fichiers pour associer un lien.
 * La réplication n'est pas prise en charge pour les volumes dans un état autre que disponible, créé ou mal configuré, et lorsque la version ONTAP n'est pas compatible.
 
 
 .Étapes
-. À partir de la page Systèmes de NetApp Console , faites glisser le système de fichiers source FSx pour ONTAP sur le système de fichiers cible FSx pour ONTAP et sélectionnez *Réplication*.
+. Depuis la page Systèmes de la NetApp Console , faites glisser le système de fichiers source FSx pour ONTAP ou le système ONTAP sur site au-dessus du système de fichiers cible FSx pour ONTAP et sélectionnez *Réplication*.
 . Sur la page Créer une réplication, sélectionnez les volumes sources à répliquer, puis *Suivant*.
 . Sous Cible de réplication, fournissez les éléments suivants :
 +
