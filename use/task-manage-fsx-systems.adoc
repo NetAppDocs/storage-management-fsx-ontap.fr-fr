@@ -28,7 +28,9 @@ https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["Découvrez comment 
 
 == Gérer un système de fichiers à l'aide d' ONTAP System Manager
 
-Vous pouvez gérer un système de fichiers FSx pour ONTAP directement depuis la console en utilisant l'interface ONTAP System Manager.  Un agent de console est requis pour utiliser System Manager.
+Vous pouvez gérer un système de fichiers FSx pour ONTAP directement depuis la console en utilisant l'interface ONTAP System Manager. Un agent Console ou un lien AWS Lambda est requis pour utiliser System Manager.
+
+link:https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Apprenez-en davantage sur l'utilisation des liens"^]
 
 
 
