@@ -238,6 +238,7 @@ Vous ne pouvez découvrir un système de fichiers FSx for ONTAP qu'une seule foi
 ====
 * Si vous sélectionnez un cluster sans nom, vous recevrez une invite pour saisir un nom pour le cluster.
 * Si vous sélectionnez un cluster qui ne dispose pas des informations d'identification requises pour gérer le système de fichiers FSx for ONTAP à partir de la console, vous recevrez une invite pour sélectionner les informations d'identification avec les autorisations requises.
+* Les régions suivantes ne sont pas prises en charge pour la découverte : les régions de Chine, les régions GovCloud (États-Unis), Secret Cloud et Top Secret Cloud.
 
 
 ====
