@@ -34,7 +34,7 @@ En savoir plus sur le https://docs.netapp.com/us-en/bluexp-setup-admin/concept-o
 
 À partir de la page Systèmes de la NetApp Console , vous pouvez créer et découvrir des systèmes FSx pour ONTAP et utiliser System Manager et d'autres services NetApp .  Si vous souhaitez gérer les systèmes et charges de travail FSx for ONTAP exécutés sur Amazon FSx for NetApp ONTAP, utilisez https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["NetApp Workload Factory"^] .
 
-link:../use/task-creating-fsx-working-environment.html["Découvrez comment créer et découvrir des systèmes FSx pour ONTAP à partir de la NetApp Console"^] .
+link:../use/task-create-fsx-system.html["Découvrez comment créer et découvrir des systèmes FSx pour ONTAP à partir de la NetApp Console"].
 
 
 

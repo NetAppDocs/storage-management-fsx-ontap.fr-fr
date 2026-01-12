@@ -217,8 +217,6 @@ link:https://docs.netapp.com/us-en/workload-fsx-ontap/learn-fsx-ontap.html#featu
 
 Si vous recherchez l'option _vue avancée_, qui vous permet de gérer un système de fichiers FSx pour ONTAP à l'aide ONTAP System Manager, vous pouvez désormais trouver cette option à partir du canevas BlueXP après avoir sélectionné l'environnement de travail.
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-fsx-ontap/main/media/screenshot-system-manager.png["Une capture d'écran du panneau de droite sur le BlueXP Canvas après avoir sélectionné un environnement de travail qui affiche l'option Gestionnaire système."]
-
 
 
 == 30 juillet 2023
