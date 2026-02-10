@@ -1,0 +1,114 @@
+---
+sidebar: sidebar 
+permalink: use/task-replicate-data.html 
+keywords: amazon fsx for netapp ontap, fsx, manage fsx for ontap system, delete fsx for ontap system, remove fsx for ontap system, throughput capacity, change throughput, automatic capacity management, capacity management, storage capacity, replication, classification, sync, backup, recovery, bluexp, NetApp Console 
+summary: Après avoir créé ou découvert un système FSx for ONTAP dans la NetApp Console, vous pouvez gérer le système de fichiers et utiliser les services de données NetApp qui fournissent des fonctionnalités telles que la sauvegarde et la récupération. 
+---
+= Répliquer les données FSx for ONTAP dans la NetApp Console
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Répliquez les données pour vous protéger contre la perte de données si la région où vos données résident subit un sinistre. La réplication des données est prise en charge entre les systèmes de fichiers FSx for ONTAP et les systèmes ONTAP sur site ou Cloud Volumes ONTAP.
+
+.À propos de cette tâche
+Cette opération crée une relation de réplication pour les volumes sources dans un système de fichiers FSx for ONTAP, un système ONTAP sur site ou un système Cloud Volumes ONTAP.
+
+Les volumes répliqués dans le système de fichiers cible sont des volumes de protection des données (DP) et suivent le format d'appellation : `{OriginalVolumeName}_copy`.
+
+.Avant de commencer
+Tenez compte des éléments suivants avant de commencer.
+
+* Pour répliquer des données entre FSx for ONTAP et ONTAP sur site ou Cloud Volumes ONTAP, vous devez sélectionner un agent Console avec une connectivité au système de fichiers ou entrer dans le système de fichiers pour associer un lien. link:https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Apprenez-en davantage sur l'utilisation des liens"^]
+* La réplication n'est pas prise en charge pour les volumes dans un état autre que disponible, créé ou mal configuré, et lorsque la version d'ONTAP n'est pas compatible.
+
+
+.Étapes
+. Depuis la page Systèmes de la NetApp Console, faites glisser le système de fichiers FSx for ONTAP source, le système ONTAP sur site ou le système Cloud Volumes ONTAP sur le système de fichiers FSx for ONTAP cible et sélectionnez *Réplication*.
+. Sur la page Créer une réplication, sélectionnez les volumes sources à répliquer, puis *Suivant*.
+. Sous Cible de réplication, fournissez les éléments suivants :
++
+.. *Nom de la cible* : Vous avez appliqué le nom de la cible lorsque vous avez glissé-déposé le système de stockage source sur le système cible dans la page Console Systems.
+.. *Cas d’utilisation* : sélectionnez l’un des cas d’utilisation suivants pour la réplication.  En fonction du cas d'utilisation sélectionné, Workload Factory remplit le formulaire avec les valeurs recommandées conformément aux meilleures pratiques.  Vous pouvez accepter les valeurs recommandées ou apporter des modifications au fur et à mesure que vous remplissez le formulaire.
++
+*** Migration : transfère vos données vers le système de fichiers cible FSx for ONTAP
+*** Reprise après sinistre à chaud : garantit une haute disponibilité et une reprise après sinistre rapide pour les charges de travail critiques
+*** Reprise après sinistre à froid ou archivage :
++
+**** Reprise après sinistre à froid : utilise des objectifs de temps de récupération (RTO) et des objets de point de récupération (RPO) plus longs pour réduire les coûts
+**** Archive : réplique les données pour le stockage à long terme et la conformité
+
+
+*** Autre
++
+De plus, la sélection du cas d’utilisation détermine la politique de réplication, ou politique SnapMirror (ONTAP).  Les termes utilisés pour décrire les politiques de réplication proviennent delink:https://docs.netapp.com/us-en/ontap/data-protection/default-protection-policies-concept.html["Documentation ONTAP 9"^] .
+
++
+**** Pour la migration et autres, la politique de réplication est appelée _MirrorAllSnapshots_.  _MirrorAllSnapshots_ est une politique asynchrone permettant de mettre en miroir tous les instantanés et le dernier système de fichiers actif.
+**** Pour la récupération après sinistre à chaud, à froid ou d'archivage, la politique de réplication est appelée _MirrorAndVault_.  _MirrorAndVault_ est une politique asynchrone et de coffre-fort pour la mise en miroir du dernier système de fichiers actif et des instantanés quotidiens et hebdomadaires.
++
+Pour tous les cas d’utilisation, si vous activez les instantanés pour la conservation à long terme, la stratégie de réplication par défaut est _MirrorAndVault_.
+
+
+
+
+
+.. *FSx for ONTAP file system* : Sélectionnez les informations d’identification, la région et le nom du système de fichiers FSx for ONTAP pour le système de fichiers cible FSx for ONTAP.
+.. *Nom de la machine virtuelle de stockage* : sélectionnez la machine virtuelle de stockage dans le menu déroulant.  La machine virtuelle de stockage que vous sélectionnez est la cible de tous les volumes sélectionnés dans cette relation de réplication.
+.. *Nom du volume* : Le nom du volume cible est généré automatiquement avec le format suivant `{OriginalVolumeName}_copy` .  Vous pouvez utiliser le nom de volume généré automatiquement ou saisir un autre nom de volume.
+.. *Politique de hiérarchisation* : sélectionnez la politique de hiérarchisation pour les données stockées dans le volume cible.  La politique de hiérarchisation est définie par défaut sur la politique de hiérarchisation recommandée pour le cas d'utilisation que vous avez sélectionné.
++
+_Balanced (Auto)_ est la stratégie de hiérarchisation par défaut lors de la création d'un volume à l'aide de la console Workload Factory.  Pour plus d'informations sur les politiques de hiérarchisation des volumes, reportez-vous àlink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["Capacité de stockage du volume"^] dans la documentation AWS FSx pour NetApp ONTAP .  Notez que Workload Factory utilise des noms basés sur des cas d'utilisation dans la console Workload Factory pour les stratégies de hiérarchisation et inclut les noms de stratégie de hiérarchisation FSx pour ONTAP entre parenthèses.
+
++
+Si vous avez sélectionné le cas d’utilisation de migration, Workload Factory choisit automatiquement de copier la stratégie de hiérarchisation du volume source sur le volume cible.  Vous pouvez désélectionner la copie de la politique de hiérarchisation et sélectionner une politique de hiérarchisation qui s'applique au volume sélectionné pour la réplication.
+
+.. *Taux de transfert maximal* : sélectionnez *Limité* et saisissez la limite de transfert maximale en Mo/s.  Vous pouvez également sélectionner *Illimité*.
++
+Sans limite, les performances du réseau et des applications peuvent diminuer.  Alternativement, nous recommandons un taux de transfert illimité pour les systèmes de fichiers FSx for ONTAP pour les charges de travail critiques, par exemple celles qui sont principalement utilisées pour la reprise après sinistre.
+
+
+
+. Sous Paramètres de réplication, fournissez les éléments suivants :
++
+.. *Intervalle de réplication* : sélectionnez la fréquence à laquelle les snapshots sont transférés du volume source vers le volume cible.
+.. *Conservation à long terme* : Vous pouvez également activer les instantanés pour une conservation à long terme.  La conservation à long terme permet aux services métier de continuer à fonctionner même en cas de panne totale du site, en prenant en charge le basculement transparent des applications à l'aide d'une copie secondaire.
++
+Les réplications sans rétention à long terme utilisent la politique _MirrorAllSnapshots_.  L’activation de la rétention à long terme attribue la politique _MirrorAndVault_ à la réplication.
+
++
+Si vous activez la conservation à long terme, sélectionnez une stratégie existante ou créez une nouvelle stratégie pour définir les snapshots à répliquer et le nombre à conserver.
+
++
+
+NOTE: La correspondance des étiquettes source et cible est nécessaire pour une conservation à long terme.  Si vous le souhaitez, Workload Factory peut créer les étiquettes manquantes pour vous.
+
++
+*** *Choisir une politique existante* : sélectionnez une politique existante dans le menu déroulant.
+*** *Créer une nouvelle politique* : saisissez un *nom de politique*.
+
+
+.. *Instantanés immuables* : Facultatif.  Sélectionnez *Activer les instantanés immuables* pour empêcher la suppression des instantanés pris dans cette stratégie pendant la période de conservation.
++
+*** Définissez la *Période de conservation* en nombre d'heures, de jours, de mois ou d'années.
+*** *Stratégies de capture instantanée* : Dans le tableau, sélectionnez la fréquence de la politique de capture instantanée et le nombre de copies à conserver.  Vous pouvez sélectionner plusieurs stratégies d’instantané.
+
+
+.. *Point d'accès S3* : Vous pouvez éventuellement connecter un point d'accès S3 pour accéder aux données du système de fichiers FSx for ONTAP résidant sur des volumes NFS ou SMB/CIFS via les API AWS S3. Seul le type d'accès aux fichiers est pris en charge. Fournissez les informations suivantes :
++
+*** *Nom du point d'accès S3* : Saisissez le nom du point d'accès S3.
+*** *Utilisateur* : Sélectionnez un utilisateur existant ayant accès au volume ou créez un nouvel utilisateur.
+*** *Type d'utilisateur* : sélectionnez *UNIX* ou *Windows* comme type d'utilisateur.
+*** *Configuration réseau* : Sélectionnez *Internet* ou *Virtual private cloud (VPC)*. Le type de réseau que vous choisissez détermine si le point d'accès est accessible depuis Internet ou limité à un VPC spécifique.
+*** *Activer les métadonnées* : L’activation des métadonnées crée une table S3 contenant tous les objets accessibles par le point d'accès S3, que vous pouvez utiliser pour l’audit, la gouvernance, l’automatisation, l’analyse et l’optimisation. L’activation des métadonnées engendre des coûts AWS supplémentaires. Consultez link:https://aws.amazon.com/s3/pricing/["Documentation tarifaire Amazon S3"^] pour plus d’informations.
+
+
+.. *Étiquettes de point d'accès S3* : Vous pouvez éventuellement ajouter jusqu'à 50 étiquettes.
+
+
+
+
+. Sélectionnez *Créer*.
+
