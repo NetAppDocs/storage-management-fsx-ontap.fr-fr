@@ -1,0 +1,9 @@
+= NetApp Console état de l'agent pris en charge pour les systèmes de fichiers FSx for ONTAP
+:allow-uri-read: 
+
+
+
+
+=== NetApp Console état de l'agent pris en charge pour les systèmes de fichiers FSx for ONTAP
+
+NetApp Console affiche désormais l'état de l'agent Console pour les systèmes de fichiers FSx for ONTAP dans les charges de travail. L'état indique si l'agent est en cours d'exécution et s'il peut communiquer avec le système de fichiers FSx for ONTAP. Ces informations peuvent vous aider à résoudre les problèmes de connectivité.
