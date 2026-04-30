@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/task-monitor-operations.html 
-keywords: monitor jobs, track jobs, monitor, track, NetApp Console, bluexp 
+keywords: monitor jobs, track jobs, monitor, track, NetApp Console 
 summary: Suivez les opérations FSx for ONTAP et surveillez la progression des opérations avec Tracker dans la NetApp Console. 
 ---
 = Surveillez les opérations FSx pour ONTAP avec Tracker dans la NetApp Console

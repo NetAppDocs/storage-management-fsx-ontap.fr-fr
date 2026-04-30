@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/task-create-fsx-system.html 
-keywords: Amazon FSx for NetApp ONTAP, fsx, volumes, create system, delete system, access key, secret key, region, working environment, availability zones, discover, storage capacity, iops, throughput, security group, security, bluexp, NetApp Console 
+keywords: Amazon FSx for NetApp ONTAP, fsx, volumes, create system, delete system, access key, secret key, region, working environment, availability zones, discover, storage capacity, iops, throughput, security group, security, NetApp Console 
 summary: Créez ou découvrez un système de fichiers FSx pour ONTAP pour ajouter et gérer des volumes et des services de données supplémentaires à partir de la NetApp Console. 
 ---
 = Créer ou découvrir un système de fichiers FSx pour ONTAP
@@ -222,7 +222,7 @@ Pour un nouveau groupe de sécurité, reportez-vous à <<Security group details,
 
 . Sous Sauvegarde et maintenance, fournissez les éléments suivants :
 +
-.. *FSx pour Sauvegarde ONTAP * : Les sauvegardes automatiques quotidiennes sont activées par défaut.  Désactiver si vous le souhaitez.
+.. *Sauvegardes de volume* : Les sauvegardes automatiques quotidiennes sont activées par défaut. Désactivez si désiré.
 +
 ... *Période de conservation des sauvegardes automatiques* : saisissez le nombre de jours pendant lesquels conserver les sauvegardes automatiques.
 ... *Fenêtre de sauvegarde automatique quotidienne* : sélectionnez *Aucune préférence* (une heure de début de sauvegarde quotidienne est sélectionnée pour vous) ou *Sélectionnez l'heure de début pour les sauvegardes quotidiennes* et spécifiez une heure de début.
