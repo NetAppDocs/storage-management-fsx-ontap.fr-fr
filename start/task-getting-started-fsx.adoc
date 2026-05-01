@@ -22,7 +22,7 @@ L'ajout d'informations d'identification AWS est requis pour fournir à la NetApp
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"]Facultatif : créer un agent de console ou un lien
 [role="quick-margin-para"]
-Pour effectuer certaines tâches de gestion à partir de la NetApp Console, vous avez besoin d'un agent de console ou d'un lien NetApp Workloads.  Un _agent de console_ est une machine virtuelle que vous déployez dans votre VPC pour gérer vos systèmes de fichiers FSx for ONTAP .  Un _lien_ exploite AWS Lambda pour créer une relation de confiance et une connectivité à vos systèmes de fichiers FSx for ONTAP .
+Pour effectuer certaines tâches de gestion depuis la NetApp Console, vous avez besoin soit d'un agent Console, soit d'un lien NetApp Workload Factory. Un _agent Console_ est une machine virtuelle que vous déployez dans votre VPC pour gérer vos systèmes de fichiers FSx for ONTAP. Un _lien_ utilise AWS Lambda pour établir une relation de confiance et une connectivité avec vos systèmes de fichiers FSx for ONTAP.
 
 [role="quick-margin-list"]
 * link:../start/concept-fsx-aws.html#console-agents-and-links-unlock-all-fsx-for-ontap-features["Découvrez quand un agent ou un lien de console est requis pour la gestion de FSx for ONTAP"]
