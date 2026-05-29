@@ -633,7 +633,6 @@
   <block id="73ff7e83001d865f3b8b3f3b309f7b7b" category="paragraph"><block ref="73ff7e83001d865f3b8b3f3b309f7b7b" category="inline-link-macro-rx"></block></block>
   <block id="f9497449a09595c4d23248602a3a1bc3" category="paragraph"><block ref="f9497449a09595c4d23248602a3a1bc3" category="inline-link-macro-rx"></block></block>
   <block id="d3ce4781c2dc4ba4dfa01f4c7e64f25f" category="list-text"><block ref="d3ce4781c2dc4ba4dfa01f4c7e64f25f" category="inline-link-macro-rx"></block></block>
-  <block id="6d360c2902addff4598434463c4c67e7" category="list-text"><block ref="6d360c2902addff4598434463c4c67e7" category="inline-link-macro-rx"></block></block>
   <block id="72d84220bc74a65487a313bd058edb1e" category="paragraph"><block ref="72d84220bc74a65487a313bd058edb1e" category="inline-link-macro-rx"></block></block>
   <block id="f6c0c8f8ded4c6640c1e912821c43739" category="paragraph"><block ref="f6c0c8f8ded4c6640c1e912821c43739" category="inline-link-macro-rx"></block></block>
   <block id="1e155daf6f11847fd4e4d8a7154301fd" category="inline-link-macro">Notes de version de la NetApp Console .</block>
@@ -720,7 +719,6 @@
   <block id="38adbad92c37166c4ce64da1eb51513b" category="inline-link-macro">créer un volume</block>
   <block id="0d2b6b8037148b2d54a1cf8b887418e7" category="paragraph">Si vous répliquez un volume source contenant des fichiers immuables, le volume cible et le système de fichiers restent verrouillés jusqu'à la fin de la période de rétention du volume source. La fonctionnalité de fichiers immuables est disponible lorsque vous <block ref="88d66b8875f0ded07f2f44fb2e4b70e3" category="inline-link-macro-rx"></block> pour un système de fichiers FSx for ONTAP.</block>
   <block id="db02b80a9dd5a7c959ec87fdf41baa91" category="inline-link-macro">réplication en cascade</block>
-  <block id="cb7048e2d3bbe74eff8dc77537e6b3cb" category="list-text">Vous pouvez répliquer un volume source (lecture/écriture) ou un volume de protection des données (DP). La réplication en cascade est prise en charge, mais un troisième saut ne l'est pas. En savoir plus sur <block ref="70f3f574eb9d2048e3113fc3bf26173a" category="inline-link-macro-rx"></block>.</block>
   <block id="ed5b7e4aa04c57efe98d70f7ef15379d" category="section-title">Cas d'utilisation de la migration</block>
   <block id="1666b76635bd7b8ba7032286416076a1" category="paragraph">Workload Factory prend en charge la réplication de migration entre les systèmes de stockage suivants.</block>
   <block id="c9bc20a670a5e3835c0109ab8efaf03d" category="list-text">Systèmes ONTAP sur site et systèmes de fichiers FSx pour ONTAP</block>
@@ -827,4 +825,6 @@
   <block id="77d0d30e7a54331923339cd4b481f87a" category="paragraph">Lorsque vous ouvrez un système FSx for ONTAP depuis la page Systèmes de la NetApp Console, vous accédez à NetApp Workload Factory. NetApp Workload Factory est un service intelligent d’optimisation et d’automatisation qui utilise les meilleures pratiques du secteur pour planifier, provisionner et exploiter les charges de travail clés à l’aide d’Amazon FSx for NetApp ONTAP.</block>
   <block id="bd794697f728318e3eb013d378f93756" category="inline-link">Apprenez à gérer un système de fichiers à l'aide de NetApp Workload Factory</block>
   <block id="7ccf7420ef554de52729730c921b7ed6" category="paragraph"><block ref="7ccf7420ef554de52729730c921b7ed6" category="inline-link-rx"></block></block>
+  <block id="0ce459c51e344ed42fa3a4c5e5211577" category="list-text"><block ref="0ce459c51e344ed42fa3a4c5e5211577" category="inline-link-macro-rx"></block></block>
+  <block id="806a2b7e18f65da5e9f4288ad8e420ae" category="paragraph">Vous pouvez répliquer un volume source (lecture/écriture) ou un volume de protection des données (DP). La réplication en cascade est prise en charge, mais un troisième saut ne l'est pas. En savoir plus sur <block ref="0c64701c212ba4f059a9983b3d2a4857" category="inline-link-macro-rx"></block>.</block>
 </blocks>

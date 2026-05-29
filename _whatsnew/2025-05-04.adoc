@@ -23,7 +23,7 @@ link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html["Connecte
 BlueXP Workloads fournit un tableau de bord dans lequel vous pouvez consulter l'état bien architecturé de vos configurations de système de fichiers.  Vous pouvez tirer parti de cette analyse pour mettre en œuvre les meilleures pratiques pour vos systèmes de fichiers FSx for ONTAP .  L'analyse de la configuration du système de fichiers inclut les configurations suivantes : seuil de capacité SSD, snapshots locaux planifiés, sauvegardes FSx planifiées pour ONTAP , hiérarchisation des données et réplication des données à distance.
 
 * link:https://docs.netapp.com/us-en/workload-fsx-ontap/configuration-analysis.html["En savoir plus sur l'analyse bien architecturée des configurations de systèmes de fichiers"^]
-* link:https://review.docs.netapp.com/us-en/workload-fsx-ontap_well-architected/improve-configurations.html["Mettez en œuvre les meilleures pratiques pour vos systèmes de fichiers"^]
+* link:https://docs.netapp.com/us-en/workload-fsx-ontap/improve-configurations.html["Mettez en œuvre les meilleures pratiques pour vos systèmes de fichiers"^]
 
 
 
