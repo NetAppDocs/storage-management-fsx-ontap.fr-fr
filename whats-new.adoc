@@ -21,7 +21,12 @@ Découvrez les nouveautés de FSx pour ONTAP.
 [[15-july-2026]]
 == 15 juillet 2026
 
-Directive non résolue dans <stdin> - include::.._whatsnew/2026-07-15.adoc[]
+
+
+[[genai-workload-removal-from-workloads-in-the-netapp-console]]
+=== Suppression de la charge de travail GenAI des charges de travail dans la NetApp Console
+
+La charge de travail GenAI a été supprimée de la section Charges de travail dans la NetApp Console.
 
 
 
