@@ -4,6 +4,7 @@
 
 
 
+[[credentials-update]]
 === Mise à jour des informations d'identification
 
 Après avoir configuré les informations d'identification et les autorisations pour votre système de fichiers FSx for ONTAP , vous serez redirigé vers la page Informations d'identification BlueXP .  À partir de cette page, vous pouvez renommer ou supprimer vos informations d’identification FSx pour ONTAP .

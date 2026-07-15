@@ -18,6 +18,7 @@ Pour créer ou gérer un système de fichiers FSx pour ONTAP , vous devez ajoute
 
 
 
+[[why-aws-credentials-are-required]]
 == Pourquoi les informations d'identification AWS sont requises
 
 Les identifiants AWS sont nécessaires pour créer et gérer des systèmes FSx for ONTAP depuis la NetApp Console. Vous pouvez créer de nouveaux identifiants ou les ajouter à une organisation existante. Les identifiants vous permettent de gérer les ressources AWS depuis la NetApp Console.
@@ -26,6 +27,7 @@ Les identifiants et les autorisations sont gérés par NetApp Workload Factory. 
 
 
 
+[[about-this-task]]
 == À propos de cette tâche
 
 Lors de l'ajout de nouvelles informations d'identification pour FSx for ONTAP à partir du stockage dans Workload Factory, vous devrez choisir les stratégies d'autorisation que vous souhaitez accorder.  Pour découvrir les ressources AWS telles que les systèmes de fichiers FSx pour ONTAP , vous aurez besoin des autorisations _view, planning et analysis_.  Pour déployer FSx pour les systèmes de fichiers ONTAP , vous aurez besoin des autorisations de _création et de suppression de systèmes de fichiers_.  Vous pouvez effectuer des opérations de base pour FSx for ONTAP sans autorisation. link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["En savoir plus sur les autorisations"].
@@ -42,6 +44,7 @@ Vous pouvez ajouter des informations d’identification en utilisant deux métho
 
 
 
+[[add-credentials-to-an-account-manually]]
 == Ajouter manuellement des informations d'identification à un compte
 
 Vous pouvez ajouter manuellement les informations d'identification AWS à la NetApp Console pour accorder à votre compte les autorisations nécessaires à la gestion des capacités de charge de travail que vous souhaitez utiliser, ainsi qu'un rôle IAM attribué à votre compte.
@@ -67,6 +70,7 @@ Vous aurez besoin d'informations d'identification pour vous connecter à votre c
 
 
 
+[[step-1-select-the-storage-capability-and-create-the-iam-policy]]
 === Étape 1 : Sélectionner la capacité de stockage et créer la politique IAM
 
 Dans cette section, vous choisirez la capacité de stockage à gérer avec ces informations d'identification, ainsi que les autorisations pour le stockage. Vous avez également la possibilité de sélectionner d'autres charges de travail comme des bases de données, GenAI ou VMware. Une fois vos sélections effectuées, vous devrez copier les autorisations de stratégie pour chaque charge de travail sélectionnée depuis le Codebox et les ajouter dans la console de gestion AWS de votre compte AWS afin de créer les stratégies.
@@ -88,6 +92,7 @@ Vous pouvez ajouter des fonctionnalités supplémentaires ultérieurement, séle
 
 
 
+[[step-2-create-the-iam-role-that-uses-the-policies]]
 === Étape 2 : Créer le rôle IAM qui utilise les stratégies
 
 Dans cette section, vous allez configurer un rôle IAM que Workload Factory assumera et qui inclut les autorisations et les politiques que vous venez de créer.
@@ -109,6 +114,7 @@ Dans cette section, vous allez configurer un rôle IAM que Workload Factory assu
 
 
 
+[[step-3-enter-a-name-and-add-the-credentials]]
 === Étape 3 : saisissez un nom et ajoutez les informations d’identification
 
 La dernière étape consiste à saisir un nom pour les identifiants.
@@ -124,6 +130,7 @@ La console crée les identifiants et les affiche sur la page Identifiants. Vous 
 
 
 
+[[add-credentials-to-an-account-using-cloudformation]]
 == Ajouter des informations d'identification à un compte à l'aide de CloudFormation
 
 Vous pouvez ajouter des informations d'identification AWS à NetApp Workload Factory à l'aide d'une pile AWS CloudFormation en sélectionnant les capacités de charge de travail que vous souhaitez utiliser, puis en lançant la pile AWS CloudFormation dans votre compte AWS. CloudFormation créera les stratégies IAM et le rôle IAM en fonction des capacités de charge de travail que vous avez sélectionnées.

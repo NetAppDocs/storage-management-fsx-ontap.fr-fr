@@ -18,6 +18,7 @@ link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["A
 
 
 
+[[netapp-console]]
 == NetApp Console
 
 La gestion Amazon FSx for NetApp ONTAP est accessible via la NetApp Console.
@@ -30,6 +31,7 @@ Apprenez-en davantage sur le https://docs.netapp.com/us-en/console-setup-admin/c
 
 
 
+[[using-fsx-for-ontap-from-the-netapp-console]]
 == Utilisation de FSx pour ONTAP depuis la NetApp Console
 
 À partir de la page Systèmes de la NetApp Console , vous pouvez créer et découvrir des systèmes FSx pour ONTAP et utiliser System Manager et d'autres services NetApp .  Si vous souhaitez gérer les systèmes et charges de travail FSx for ONTAP exécutés sur Amazon FSx for NetApp ONTAP, utilisez https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["NetApp Workload Factory"^] .
@@ -38,6 +40,7 @@ link:../use/task-create-fsx-system.html["Découvrez comment créer et découvrir
 
 
 
+[[features]]
 == Caractéristiques
 
 * Pas besoin de configurer ou de gérer des périphériques de stockage, des logiciels ou des sauvegardes.
@@ -49,6 +52,7 @@ link:../use/task-create-fsx-system.html["Découvrez comment créer et découvrir
 
 
 
+[[additional-features-in-netapp-console]]
 == Fonctionnalités supplémentaires dans la NetApp Console
 
 * FSx pour ONTAP est pris en charge lors de l'utilisation de la NetApp Console en mode _standard_, qui exploite la couche SaaS de la NetApp Console pour fournir toutes les fonctionnalités.  Le mode _restreint_ et le mode _privé_ ne sont pas pris en charge.
@@ -63,6 +67,7 @@ Consultez link:https://docs.netapp.com/us-en/console-setup-admin/concept-modes.h
 
 
 
+[[console-agents-and-links-unlock-all-fsx-for-ontap-features]]
 == Les agents et liens de la console débloquent toutes les fonctionnalités de FSx for ONTAP
 
 Les agents et liens de console permettent la connectivité et les relations de confiance entre la NetApp Console et les environnements de travail Amazon FSx for NetApp ONTAP .  Un agent de console est un logiciel NetApp qui s'exécute dans votre cloud ou sur votre réseau local, et un lien utilise AWS Lambda pour exécuter le code NetApp .  Vous n’avez pas besoin d’un agent ou d’un lien de console pour démarrer dans la console ou créer des systèmes FSx pour ONTAP , mais vous devez utiliser un agent ou un lien de console pour utiliser pleinement les fonctionnalités de FSx pour ONTAP .
@@ -90,6 +95,7 @@ En savoir plus sur les agents et les liens de la console et quand les utiliser 
 
 
 
+[[cost]]
 == Coût
 
 Votre compte FSx for ONTAP est géré par AWS et non par NetApp. Se référer à https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["Guide de démarrage Amazon FSx for NetApp ONTAP"^] .
@@ -98,12 +104,14 @@ L'utilisation de l'agent ou du lien de console dans AWS et des services de donn�
 
 
 
+[[supported-regions]]
 == Régions prises en charge
 
 https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/["Afficher les régions Amazon prises en charge."^]
 
 
 
+[[getting-help]]
 == Obtenir de l'aide
 
 Amazon FSx for NetApp ONTAP est une solution AWS propriétaire.  Pour toute question ou problème d'assistance technique lié à votre système de fichiers FSx for ONTAP , à votre infrastructure ou à toute solution utilisant ce service, utilisez le centre d'assistance de votre console de gestion AWS pour ouvrir un dossier d'assistance auprès d'AWS.  Sélectionnez le service « FSx for ONTAP» et la catégorie appropriée.  Fournissez les informations restantes requises pour créer votre demande d’assistance AWS.

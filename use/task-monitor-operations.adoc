@@ -35,6 +35,7 @@ Conservation des événements:: Les événements sont conservés dans l'interfac
 
 
 
+[[track-and-monitor-operations]]
 == Suivre et surveiller les opérations
 
 Suivez et surveillez les opérations dans la NetApp Console avec Tracker.
@@ -47,6 +48,7 @@ Suivez et surveillez les opérations dans la NetApp Console avec Tracker.
 
 
 
+[[view-api-request]]
 == Afficher la demande d'API
 
 Affichez la demande d’API dans la boîte de code pour une tâche dans Tracker.
@@ -58,6 +60,7 @@ Affichez la demande d’API dans la boîte de code pour une tâche dans Tracker.
 
 
 
+[[retry-a-failed-operation]]
 == Réessayer une opération ayant échoué
 
 Réessayer une opération ayant échoué dans Tracker.  La nouvelle tentative de l’opération ayant échoué démarre une nouvelle tâche que vous pouvez surveiller dans Tracker.
@@ -77,6 +80,7 @@ L'opération est réinitialisée et apparaît comme une nouvelle tâche dans Tra
 
 
 
+[[edit-and-retry-a-failed-operation]]
 == Modifier et réessayer une opération ayant échoué
 
 Modifiez les paramètres de l’opération ayant échoué et réessayez l’opération en dehors de Tracker.

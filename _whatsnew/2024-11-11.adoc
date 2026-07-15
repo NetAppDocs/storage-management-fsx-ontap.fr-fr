@@ -4,6 +4,7 @@
 
 
 
+[[fsx-for-ontap-integrates-with-storage-in-bluexp-workload-factory]]
 === FSx pour ONTAP s'intègre au stockage dans BlueXP Workload Factory
 
 Les tâches de gestion du système de fichiers FSx pour ONTAP telles que l'ajout de volumes, l'extension de la capacité du système de fichiers et la gestion des machines virtuelles de stockage sont désormais gérées dans BlueXP workload factory, un nouveau service proposé par NetApp et Amazon FSx for NetApp ONTAP.  Vous pouvez utiliser vos informations d’identification et autorisations existantes comme avant.  La différence est que vous pouvez désormais faire plus à partir de BlueXP workload factory pour gérer vos systèmes de fichiers.  Lorsque vous ouvrez un environnement de travail FSx pour ONTAP à partir du canevas BlueXP , vous accédez directement à BlueXP workload factory.

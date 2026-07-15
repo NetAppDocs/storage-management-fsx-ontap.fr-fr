@@ -18,6 +18,7 @@ Créez ou découvrez un système de fichiers FSx pour ONTAP pour ajouter et gér
 
 
 
+[[create-an-fsx-for-ontap-system]]
 == Créer un FSx pour le système ONTAP
 
 La première étape consiste à créer un système de fichiers FSx pour ONTAP .  Si vous avez déjà créé un système de fichiers FSx pour ONTAP dans la console de gestion AWS, vous pouvezlink:task-create-fsx-system.html#discover-an-existing-fsx-for-ontap-file-system["découvrez-le en utilisant la NetApp Console"] .
@@ -34,6 +35,7 @@ Avant de créer votre système de fichiers FSx pour ONTAP , vous aurez besoin de
 
 
 
+[[create-an-fsx-for-ontap-file-system]]
 == Créer un système de fichiers FSx pour ONTAP
 
 Vous pouvez créer un système de fichiers FSx pour ONTAP à l'aide de _Création rapide_ ou _Création avancée_.  Vous pouvez également utiliser les outils suivants disponibles dans Codebox : API REST, CloudFormation et Terraform. link:https://docs.netapp.com/us-en/workload-setup-admin/use-codebox.html#how-to-use-codebox["Apprenez à utiliser Codebox pour l'automatisation"^] .
@@ -242,6 +244,7 @@ Vous pouvez gérer vos systèmes de fichiers FSx for ONTAP de plusieurs manière
 ====
 
 
+[[discover-an-existing-fsx-for-ontap-file-system]]
 == Découvrir un système de fichiers FSx for ONTAP existant
 
 Si vous avez précédemment fourni vos informations d'identification AWS dans la NetApp Console, vous pouvez découvrir automatiquement les systèmes de fichiers FSx for ONTAP à partir de la page Discoverable systems .  Vous pouvez également consulter les services de données disponibles.

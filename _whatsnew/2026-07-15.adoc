@@ -1,0 +1,10 @@
+= Suppression de la charge de travail GenAI des charges de travail dans la NetApp Console
+:allow-uri-read: 
+
+
+
+
+[[genai-workload-removal-from-workloads-in-the-netapp-console]]
+=== Suppression de la charge de travail GenAI des charges de travail dans la NetApp Console
+
+La charge de travail GenAI a été supprimée de la section Charges de travail dans la NetApp Console.
